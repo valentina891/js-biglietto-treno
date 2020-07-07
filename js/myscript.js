@@ -1,25 +1,18 @@
-var trattaUtente = prompt("Km da percorrere");
+var trattaUtente = parseInt(prompt("Km da percorrere"));
 var etaUtente = parseInt(prompt("Inserisci la tua età"));
 
-var etaOver > 65;
-var etaMinorenni < 18;
-
-if (etaUtente<18) {
-    prezzoBiglietto * 0.8;
-}
-
-if (etaUtente>65) {
-    prezzoBiglietto * 0.6;
-}
-
-var scontatoMinorenni = 0.8;
-var scontatoOver = 0.6;
-
+var etaOver = 65;
+var etaMinorenni = 18;
 var prezzoBiglietto = 0.21 * trattaUtente;
-var totaleViaggioOver = prezzoBiglietto * 0.6;
-var totaleViaggioMinorenni = prezzoBiglietto * 0.8;
-console.log(prezzoBiglietto);
+document.getElementById('prezzo-biglietto').innerHTML = prezzoBiglietto;
 
-// document.getElementById('biglietto-prezzo-pieno').innerHTML = prezzoBiglietto;
-// document.getElementById('biglietto-over').innerHTML = totaleViaggioOver;
-// document.getElementById('biglietto-teen').innerHTML = totaleViaggioMinorenni;
+if (etaUtente < etaMinorenni) {
+    prezzoBiglietto = prezzoBiglietto * 0.8;
+    document.getElementById('biglietto-over').innerHTML = prezzoBiglietto;
+}
+else if (etaUtente > etaOver) {
+    prezzoBiglietto = prezzoBiglietto * 0.6;
+    document.getElementById('biglietto-teen').innerHTML = prezzoBiglietto;
+}
+
+console.log(prezzoBiglietto);
